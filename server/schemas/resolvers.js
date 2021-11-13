@@ -21,9 +21,9 @@ const resolvers = {
         .populate("friends")
         .populate("thoughts");
     },
-    // gets single user by id
-    user: async (parent, { _id }) => {
-      return User.findOne({ _id })
+    // gets single user by username
+    user: async (parent, { username }) => {
+      return User.findOne({ username })
         .select("-__v -password")
         .populate("friends")
         .populate("thoughts");
